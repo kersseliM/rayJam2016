@@ -11,12 +11,10 @@ public class RotateObject : MonoBehaviour
     bool isSpinning = true;
 
     bool isActive = true;
-    public SlottiMaster slottiMaster;
 
     // Use this for initialization
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -40,14 +38,27 @@ public class RotateObject : MonoBehaviour
 
   public  void StopReel()
     {
-        slottiMaster.rayCastArrow();
+        SlottiMaster.Instance.rayCastArrow();
         isSpinning = false;
+        gameObject.layer = SlottiMaster.Instance.lm_UnActive;
+
+        foreach (Transform t in transform)
+        {
+            t.gameObject.layer = 10;
+        }
     }
 
 
   public void ReStartReel()
   {
       isSpinning = true;
+
+      gameObject.layer = SlottiMaster.Instance.lm_UnActive;
+
+      foreach (Transform t in transform)
+      {
+          t.gameObject.layer = 9;
+      }
   }
 
 
