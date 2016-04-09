@@ -9,11 +9,11 @@ public class GameManager : MonoBehaviour
     public GameObject GGPanel;
     public Text GGText;
 
-    private bool[] playerDead = new bool[2];
+    private bool[] playerDead = new bool[4];
 
     void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -31,20 +31,25 @@ public class GameManager : MonoBehaviour
     public bool GetPlayerDead(int id) { return playerDead[id]; }
     public void SetPlayerDead(int id)
     {
-        if(id == 0 && !playerDead[1])
+        playerDead[id] = true;
+        byte livingCount = 0;
+        int winnerId = 608;
+        for (int i = 0; i < playerDead.Length; i++)
         {
-            playerDead[0] = true;
-            DeadEvent(id);
+            if (!playerDead[i])
+            {
+                livingCount++;
+                winnerId = i;
+            }
         }
-        if (id == 1 && !playerDead[0])
+        if (livingCount == 1)
         {
-            playerDead[1] = true;
-            DeadEvent(id);
+            DeadEvent(winnerId);
         }
     }
     private void DeadEvent(int id)
     {
         GGPanel.SetActive(true);
-        GGText.text = "Player  " + (id + 1) + "  Got  Rekt";
+        GGText.text = "Player  " + (id + 1) + "  Rekted  ém  All!";
     }
 }

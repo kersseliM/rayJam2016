@@ -19,63 +19,51 @@ public class Move : MonoBehaviour
     {
         if (!GameManager.instance.GetPlayerDead(0))
         {
-            dTapTimer[0] += Time.deltaTime;
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                //  TapDown(0);
-            }
-            if (Input.GetKey(KeyCode.W))
-            {
-                //  Tap(0);
-            }
-            if (Input.GetKeyUp(KeyCode.W))
+            if (Input.GetButtonUp("P1F"))
             {
                 TapUp(0, 1);
             }
-            if (Input.GetKeyUp(KeyCode.S))
+            if (Input.GetButtonUp("P1B"))
             {
                 TapUp(0, -1);
             }
         }
         if (!GameManager.instance.GetPlayerDead(1))
         {
-            dTapTimer[1] += Time.deltaTime;
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                // TapDown(1);
-            }
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                //   Tap(1);
-            }
-            if (Input.GetKeyUp(KeyCode.UpArrow))
+            if (Input.GetButtonUp("P2F"))
             {
                 TapUp(1, 1);
             }
-            if (Input.GetKeyUp(KeyCode.DownArrow))
+            if (Input.GetButtonUp("P2B"))
             {
                 TapUp(1, -1);
             }
         }
-    }
-    private void TapDown(int id)
-    {
-        if (dTapTimer[id] < dTapTime)
+        if (!GameManager.instance.GetPlayerDead(2))
         {
-            playerRotator[id].speed *= -1;
+            if (Input.GetButtonUp("P3F"))
+            {
+                TapUp(2, 1);
+            }
+            if (Input.GetButtonUp("P3B"))
+            {
+                TapUp(2, -1);
+            }
         }
-        dTapTimer[id] = 0;
-
-        storedPRotSpeed[id] = playerRotator[id].speed;
-        playerRotator[id].speed = Vector3.zero;
-
-    }
-    private void Tap(int id)
-    {
+        if (!GameManager.instance.GetPlayerDead(3))
+        {
+            if (Input.GetButtonUp("P4F"))
+            {
+                TapUp(3, 1);
+            }
+            if (Input.GetButtonUp("P4B"))
+            {
+                TapUp(3, -1);
+            }
+        }
     }
     private void TapUp(int id, int dir)
     {
         playerRB[id].AddForce(playerTransform[id].forward * power * Time.deltaTime * dir, ForceMode.Impulse);
-      //  playerRotator[id].speed = storedPRotSpeed[id];
     }
 }

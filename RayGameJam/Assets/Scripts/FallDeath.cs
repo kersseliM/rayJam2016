@@ -7,7 +7,6 @@ public class FallDeath : MonoBehaviour
     {
         if (colleisson.gameObject.tag == "Player")
         {
-            print(colleisson.gameObject.name);
             colleisson.gameObject.GetComponent<PlayerGuy>().Kill();
         }
     }
