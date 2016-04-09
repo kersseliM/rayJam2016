@@ -4,6 +4,11 @@ using System.Collections;
 public class SlotMachineObject : MonoBehaviour
 {
    SimpleRotate rotareObject;
+
+
+   public en_TypeOfObject MYTYPE;
+        
+
     public en_Fruits MyID;
     Vector3 originalScale;
     // Use this for initialization
@@ -28,6 +33,12 @@ public class SlotMachineObject : MonoBehaviour
         if(rotareObject != null)
       rotareObject.enabled = true;
       transform.localScale = originalScale * 1.4f;
+
+
+
+
+
+
         print(MyID);
     }
 
