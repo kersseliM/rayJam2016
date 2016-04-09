@@ -1,4 +1,3 @@
 1. Äänet + musiikki
 2. Pelaajan sprinttiefekti paikoilleen
-3. RulettiCollider paikoilleen (uusi tasainen lattia)
-4. Pelaajien uudet hahmomallit paikoilleen (jotka valmiita)
+3. Appelsiinin uusi räjähdysefekti paikoilleen
