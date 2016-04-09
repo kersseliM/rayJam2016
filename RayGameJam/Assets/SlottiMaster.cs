@@ -51,7 +51,7 @@ public class SlottiMaster : MonoBehaviour
 
     public void StopActiveReel()
     {
-
+        
         ActiveSlot.StopReel();
         arrowOfFortune.RayCast();
     }
@@ -59,13 +59,32 @@ public class SlottiMaster : MonoBehaviour
     public void RestartSlots()
     {
 
-
-
     }
 
     public void rayCastArrow()
     {
-        arrowOfFortune.RayCast();
+        if (ActiveSlot.isActive == true)
+        {
+
+            if (arrowOfFortune.RayCast() == false)
+            {
+                ActiveSlot.RotateObjecy(3);
+                print("ROTATE");
+                Invoke("rayCastArrow", 0.02F);
+            }
+            else
+            {
+                ActiveSlot.HIT();
+            }
+        }
     }
 
+
+    public void SlotHit()
+    {
+
+
+
+
+    }
 }

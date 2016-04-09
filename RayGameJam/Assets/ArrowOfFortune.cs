@@ -16,7 +16,7 @@ public class ArrowOfFortune : MonoBehaviour
         // RayCast();
     }
 
-    public void RayCast()
+    public bool RayCast()
     {
 
         Ray ray = new Ray(spawnPoint.position, transform.right);
@@ -25,9 +25,15 @@ public class ArrowOfFortune : MonoBehaviour
 
         if (Physics.Raycast(ray, out rayhit, rayLenght, SlottiMaster.Instance.lm_ActiveSlot))
         {
-            print(rayhit.collider.gameObject.name);
+            print(rayhit.collider.gameObject.name)
+
+
+
+            return true;
         }
 
+
+        return false;
     }
 
 }
