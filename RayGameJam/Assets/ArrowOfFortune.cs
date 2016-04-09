@@ -29,7 +29,6 @@ public class ArrowOfFortune : MonoBehaviour
 
         if (Physics.Raycast(ray, out rayhit, rayLenght, SlottiMaster.Instance.lm_ActiveSlot))
         {
-            print(rayhit.collider.gameObject.name);
 
             rayhit.collider.gameObject.GetComponent<SlotMachineObject>().ActivateMe();
                 SlottiMaster.Instance.TrueStopReel();

@@ -20,8 +20,6 @@ public class RotateObject : MonoBehaviour
 
     {
         Transform t = transform.FindChild("Fruits");
-
-        print(t);
         myfruSits = new SlotMachineObject[t.childCount];
 
         for (int i = 0; i < t.childCount; i++)
@@ -47,7 +45,6 @@ public class RotateObject : MonoBehaviour
 
     public void trueStop()
     {
-        print("trueds");
         isSpinning = false;
 
     }

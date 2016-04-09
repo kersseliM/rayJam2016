@@ -20,13 +20,18 @@ public class SlotMachineObject : MonoBehaviour
         bc = GetComponent<BoxCollider>();
        // bc.size = bc.size * 2;
         originalScale = transform.localScale;
-        startLocalPosition = transform.localPosition;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    void Start()
+    {
+        startLocalPosition = transform.localPosition;
     }
 
     public void ActivateMe()
@@ -38,7 +43,7 @@ public class SlotMachineObject : MonoBehaviour
             Vector3 pos = transform.position;
             pos.y = SlottiMaster.Instance.y;
             pos.z = SlottiMaster.Instance.z;
-            transform.position = pos;
+        //    transform.position = pos;
 
             if (rotareObject != null)
                 rotareObject.enabled = true;

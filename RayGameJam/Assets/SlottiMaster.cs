@@ -66,7 +66,6 @@ public class SlottiMaster : MonoBehaviour
 
     public void StopActiveReel()
     {
-        print("dd");
             ActiveSlot.StopReel();
     }
 
