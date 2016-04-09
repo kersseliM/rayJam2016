@@ -58,6 +58,11 @@ public class SlottiMaster : MonoBehaviour
 
     public void RestartSlots()
     {
+        foreach (RotateObject r in SLOTS)
+        {
+            r.ReStartReel();
+        }
+
 
     }
 
@@ -69,7 +74,6 @@ public class SlottiMaster : MonoBehaviour
             if (arrowOfFortune.RayCast() == false)
             {
                 ActiveSlot.RotateObjecy(3);
-                print("ROTATE");
                 Invoke("rayCastArrow", 0.02F);
             }
             else

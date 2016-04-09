@@ -27,7 +27,7 @@ public class ArrowOfFortune : MonoBehaviour
         {
             print(rayhit.collider.gameObject.name);
 
-
+            rayhit.collider.gameObject.GetComponent<SlotMachineObject>().ActivateMe();
 
             return true;
         }

@@ -1,15 +1,42 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SlotMachineObject : MonoBehaviour {
+public class SlotMachineObject : MonoBehaviour
+{
+   SimpleRotate rotareObject;
+    public en_Fruits MyID;
+    Vector3 originalScale;
+    // Use this for initialization
+    void Awake()
+    {
+        if (transform.childCount > 0)
+        {
+            rotareObject = transform.GetChild(0).gameObject.GetComponent<SimpleRotate>();
+        }
+        originalScale = transform.localScale;
+    }
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public void ActivateMe()
+    {
+
+        if(rotareObject != null)
+      rotareObject.enabled = true;
+      transform.localScale = originalScale * 1.4f;
+        print(MyID);
+    }
+
+
+    public void DeActiveMe()
+    {
+        transform.localScale = originalScale;
+        if (rotareObject != null)
+        rotareObject.enabled = false;
+    }
+
 }
