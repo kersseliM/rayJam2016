@@ -6,11 +6,8 @@ public class ArrowOfFortune : MonoBehaviour
 
     public Transform spawnPoint;
     float rayLenght = 3;
+    Camera ac;
     // Use this for initialization
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
