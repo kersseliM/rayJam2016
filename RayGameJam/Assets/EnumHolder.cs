@@ -12,7 +12,20 @@ public enum en_Fruits
     Luumukiisseli,
     Rypaleet,
     RayLogo,
-    Vesimeloni
+    Vesimeloni,
+    IamNotFruit
+}
+
+
+public enum en_Multipliers
+{
+   
+    X_1,
+    X_2,
+    X_3,
+    X_0,
+    X_Puoli
+ 
 }
 
 
