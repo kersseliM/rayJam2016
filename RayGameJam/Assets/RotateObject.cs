@@ -5,18 +5,16 @@ public class RotateObject : MonoBehaviour
 {
 
     public Vector3 rotate;
-    public float Speed = 5;
+    public float speed = 5;
 
     public  KeyCode stop, start;
     bool isSpinning = true;
 
-    bool isActive = true;
-    public SlottiMaster slottiMaster;
+   public bool isActive = true;
 
     // Use this for initialization
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -25,7 +23,7 @@ public class RotateObject : MonoBehaviour
         if (isActive == true)
         {
             if (isSpinning == true)
-                transform.Rotate(rotate * Time.deltaTime * Speed);
+                RotateObjecy(speed);
 
             if (Input.GetKeyDown(stop))
             {
@@ -40,14 +38,41 @@ public class RotateObject : MonoBehaviour
 
   public  void StopReel()
     {
-        slottiMaster.rayCastArrow();
+        SlottiMaster.Instance.rayCastArrow();
         isSpinning = false;
+
+    
     }
+
+
+  public void HIT()
+  {
+      print("JP");
+
+      isActive = false;
+      gameObject.layer = SlottiMaster.Instance.lm_UnActive;
+      foreach (Transform t in transform)
+      {
+          t.gameObject.layer = 10;
+      }
+  }
+
+  public void RotateObjecy(float speed)
+  {
+      transform.Rotate(rotate * Time.deltaTime * speed);
+  }
 
 
   public void ReStartReel()
   {
       isSpinning = true;
+
+      gameObject.layer = SlottiMaster.Instance.lm_UnActive;
+
+      foreach (Transform t in transform)
+      {
+          t.gameObject.layer = 9;
+      }
   }
 
 
