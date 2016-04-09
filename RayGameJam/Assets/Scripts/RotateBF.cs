@@ -4,70 +4,61 @@ using System.Collections;
 public class RotateBF : MonoBehaviour
 {
     public Vector3 speed;
-    public Vector3 min;
     public Vector3 max;
-    private Vector3 cur;
-    private Vector3 dir;
-    private Vector3 eulerChange;
+    public Vector3 min;
 
+    private Vector3 curAngle;
+    private Vector3 cur;
     new Transform transform;
 
     void Start()
     {
         transform = gameObject.transform;
-        dir = Vector3.one;
-        cur = Vector3.zero;
     }
-    
+
     void Update()
     {
-        transform.Rotate(new Vector3(speed.x * dir.x * Time.deltaTime, speed.y * dir.y * Time.deltaTime, speed.z * dir.z * Time.deltaTime));
-        cur = new Vector3(cur.x + speed.x * dir.x * Time.deltaTime, cur.y + speed.y * dir.y * Time.deltaTime, cur.z + speed.z * dir.z * Time.deltaTime);
-        print(cur);
-
-        if(cur.x >= max.x)
+        cur = new Vector3(speed.x*Time.deltaTime, speed.y * Time.deltaTime, speed.z * Time.deltaTime);
+        curAngle += cur;
+        if(speed.x > 0 && curAngle.x >= max.x)
         {
-            eulerChange.x = max.x - cur.x;
-            cur.x -= eulerChange.x;
-            dir.x *= -1;
+            cur.x += (max.x - curAngle.x) * 2;
+            curAngle.x += (max.x - curAngle.x) * 2;
+            speed.x *= -1;
         }
-        else if(cur.x <= min.x)
+        else if (speed.x < 0 && curAngle.x <= min.x)
         {
-            eulerChange.x = min.x - cur.x;
-            cur.x += eulerChange.x;
-            dir.x *= -1;
+            cur.x += (min.x - curAngle.x) * 2;
+            curAngle.x += (min.x - curAngle.x) * 2;
+            speed.x *= -1;
         }
 
-        if (cur.y >= max.y)
+        if (speed.y > 0 && curAngle.y >= max.y)
         {
-            eulerChange.y = max.y - cur.y;
-            cur.y -= eulerChange.y;
-            dir.y *= -1;
+            cur.y += (max.y - curAngle.y) * 2;
+            curAngle.y += (max.y - curAngle.y) * 2;
+            speed.y *= -1;
         }
-        else if (cur.y <= min.y)
+        else if (speed.y < 0 && curAngle.y <= min.y)
         {
-            eulerChange.y = min.y - cur.y;
-            cur.y += eulerChange.y;
-            dir.y *= -1;
-        }
-
-        if (cur.z >= max.z)
-        {
-            eulerChange.z = max.z - cur.z;
-            cur.z -= eulerChange.z;
-            dir.z *= -1;
-        }
-        else if (cur.z <= min.z)
-        {
-            eulerChange.z = min.z - cur.z;
-            cur.z += eulerChange.z;
-            dir.z *= -1;
+            cur.y += (min.y - curAngle.y) * 2;
+            curAngle.y += (min.y - curAngle.y) * 2;
+            speed.y *= -1;
         }
 
-        if(eulerChange != Vector3.zero)
+        if (speed.z > 0 && curAngle.z >= max.z)
         {
-            transform.localEulerAngles += eulerChange;
-            eulerChange = Vector3.zero;
+            cur.z += (max.z - curAngle.z) * 2;
+            curAngle.z += (max.z - curAngle.z) * 2;
+            speed.z *= -1;
         }
+        else if (speed.z < 0 && curAngle.z <= min.z)
+        {
+            cur.z += (min.z - curAngle.z) * 2;
+            curAngle.z += (min.z - curAngle.z) * 2;
+            speed.z *= -1;
+        }
+
+        transform.Rotate(cur);
     }
 }

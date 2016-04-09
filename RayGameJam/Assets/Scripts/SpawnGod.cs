@@ -3,28 +3,33 @@ using System.Collections;
 
 public class SpawnGod : MonoBehaviour
 {
-    public float spawnTime = 1;
-    public Transform myRotationTrans;
-    private float spawnTimer = 0;
-    new Transform transform;
-    void Start()
+    public Transform[] spawnPoint;
+    private bool turn = false;
+    private int prev = 0;
+    public void Spawn(int id)
     {
-        transform = gameObject.transform;
-        spawnTimer = spawnTime;
+        BasicFruit newFruit = (BasicFruit)MainPool.instance.GetObject(id).MainScript;
+        int curPoint = NewPointId();
+        newFruit.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);
+        /*  if (turn)
+          {
+              newFruit.Set(spawnPoint[0].eulerAngles, spawnPoint[0].position);
+              turn = false;
+          }
+          else
+          {
+              newFruit.Set(spawnPoint[1].eulerAngles, spawnPoint[1].position);
+              turn = true;
+          }*/
     }
-
-    void Update()
+    private int NewPointId()
     {
-        spawnTimer -= Time.deltaTime;
-        if (spawnTimer <= 0)
+        int pointy = Random.Range(0, spawnPoint.Length);
+        if (pointy == prev)
         {
-            Spawn();
-            spawnTimer = spawnTime + spawnTimer;
+            pointy = NewPointId();
         }
-    }
-    private void Spawn()
-    {
-        BasicFruit newFruit = (BasicFruit)MainPool.instance.GetObject(Random.Range(0,5)).MainScript;
-        newFruit.Set(myRotationTrans.localEulerAngles, transform.position);
+        prev = pointy;
+        return pointy;
     }
 }
