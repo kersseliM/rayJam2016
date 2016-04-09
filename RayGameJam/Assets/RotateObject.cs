@@ -50,6 +50,17 @@ public class RotateObject : MonoBehaviour
     }
 
 
+    public void DeActibeFruits()
+    {
+
+
+        foreach (SlotMachineObject t in myfruSits)
+        {
+            t.DeActiveMe();
+        }
+
+    }
+
   public  void ActiveMe()
     {
         isActive = true;
@@ -58,6 +69,7 @@ public class RotateObject : MonoBehaviour
         foreach (SlotMachineObject t in myfruSits)
         {
             t.gameObject.layer = 9;
+            t.timeToSpinForReal();
         }
 
     }

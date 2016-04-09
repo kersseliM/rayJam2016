@@ -29,6 +29,9 @@ public class SlottiMaster : MonoBehaviour
 
     public static SlottiMaster Instance;
 
+
+    public Transform[] SlotSpawnPoints;
+
     void Awake()
     {
 
@@ -47,6 +50,7 @@ public class SlottiMaster : MonoBehaviour
     void Start()
     {
         ActiveSlot = SLOTS[0];
+      //  SLOTS[1].ReStartReel();
         oikeaLottoRivi = new en_Fruits[SLOTS.Length];
         
     }
@@ -145,6 +149,19 @@ public class SlottiMaster : MonoBehaviour
 
     }
 
+
+public   Vector3 getSpawnPosition()
+    {
+
+        if (count < SLOTS.Length)
+        {
+            return SlotSpawnPoints[count].position;
+        }
+        else
+        {
+            return SlotSpawnPoints[2].position;
+        }
+    }
 
     bool endOfSpin;
     void i()
