@@ -17,6 +17,7 @@ public class SlottiMaster : MonoBehaviour
     public RotateObject[] SLOTS;// 
 
     public float y;
+    public float z = -5;
 
    en_Fruits[]  oikeaLottoRivi;
 

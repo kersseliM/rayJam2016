@@ -15,6 +15,7 @@ public class SlotMachineObject : MonoBehaviour
         if (transform.childCount > 0)
         {
             rotareObject = transform.GetChild(0).gameObject.GetComponent<SimpleRotate>();
+            transform.GetChild(0).gameObject.layer = 8;
         }
         bc = GetComponent<BoxCollider>();
        // bc.size = bc.size * 2;
@@ -36,6 +37,7 @@ public class SlotMachineObject : MonoBehaviour
 
             Vector3 pos = transform.position;
             pos.y = SlottiMaster.Instance.y;
+            pos.z = SlottiMaster.Instance.z;
             transform.position = pos;
 
             if (rotareObject != null)
