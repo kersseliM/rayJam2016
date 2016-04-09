@@ -48,10 +48,8 @@ public class KillerFruit : MonoBehaviour
     }
     void OnCollisionEnter(Collision colleisson)
     {
-        print("kollideed");
         if (colleisson.gameObject.tag == "Player")
         {
-            print("kollideed player");
             print(colleisson.gameObject.name);
             colleisson.gameObject.GetComponent<PlayerGuy>().Kill();
         }

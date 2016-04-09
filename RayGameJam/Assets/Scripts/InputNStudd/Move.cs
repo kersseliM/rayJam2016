@@ -22,15 +22,19 @@ public class Move : MonoBehaviour
             dTapTimer[0] += Time.deltaTime;
             if (Input.GetKeyDown(KeyCode.W))
             {
-                TapDown(0);
+                //  TapDown(0);
             }
             if (Input.GetKey(KeyCode.W))
             {
-                Tap(0);
+                //  Tap(0);
             }
             if (Input.GetKeyUp(KeyCode.W))
             {
-                TapUp(0);
+                TapUp(0, 1);
+            }
+            if (Input.GetKeyUp(KeyCode.S))
+            {
+                TapUp(0, -1);
             }
         }
         if (!GameManager.instance.GetPlayerDead(1))
@@ -38,15 +42,19 @@ public class Move : MonoBehaviour
             dTapTimer[1] += Time.deltaTime;
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                TapDown(1);
+                // TapDown(1);
             }
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                Tap(1);
+                //   Tap(1);
             }
             if (Input.GetKeyUp(KeyCode.UpArrow))
             {
-                TapUp(1);
+                TapUp(1, 1);
+            }
+            if (Input.GetKeyUp(KeyCode.DownArrow))
+            {
+                TapUp(1, -1);
             }
         }
     }
@@ -64,10 +72,10 @@ public class Move : MonoBehaviour
     }
     private void Tap(int id)
     {
-        playerRB[id].AddForce(playerTransform[id].forward * power * Time.deltaTime, ForceMode.Impulse);
     }
-    private void TapUp(int id)
+    private void TapUp(int id, int dir)
     {
-        playerRotator[id].speed = storedPRotSpeed[id];
+        playerRB[id].AddForce(playerTransform[id].forward * power * Time.deltaTime * dir, ForceMode.Impulse);
+      //  playerRotator[id].speed = storedPRotSpeed[id];
     }
 }
