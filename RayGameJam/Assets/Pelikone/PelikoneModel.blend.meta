@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: 0a2f85278cd6df54eba6d016066ddb0a
+timeCreated: 1460210767
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Cube
+    100002: InfoNappi
+    100004: Pelaaja1Eteen
+    100006: Pelaaja1Taakse
+    100008: Pelaaja2Eteen
+    100010: Pelaaja2Taakse
+    100012: Pelaaja3Eteen
+    100014: Pelaaja3Taakse
+    100016: Pelaaja4Eteen
+    100018: Pelaaja4Taakse
+    100020: //RootNode
+    100022: StartNappi
+    100024: Pelikone
+    400000: Cube
+    400002: InfoNappi
+    400004: Pelaaja1Eteen
+    400006: Pelaaja1Taakse
+    400008: Pelaaja2Eteen
+    400010: Pelaaja2Taakse
+    400012: Pelaaja3Eteen
+    400014: Pelaaja3Taakse
+    400016: Pelaaja4Eteen
+    400018: Pelaaja4Taakse
+    400020: //RootNode
+    400022: StartNappi
+    400024: Pelikone
+    2300000: Cube
+    2300002: InfoNappi
+    2300004: Pelaaja1Eteen
+    2300006: Pelaaja1Taakse
+    2300008: Pelaaja2Eteen
+    2300010: Pelaaja2Taakse
+    2300012: Pelaaja3Eteen
+    2300014: Pelaaja3Taakse
+    2300016: Pelaaja4Eteen
+    2300018: Pelaaja4Taakse
+    2300020: StartNappi
+    2300022: Pelikone
+    3300000: Cube
+    3300002: InfoNappi
+    3300004: Pelaaja1Eteen
+    3300006: Pelaaja1Taakse
+    3300008: Pelaaja2Eteen
+    3300010: Pelaaja2Taakse
+    3300012: Pelaaja3Eteen
+    3300014: Pelaaja3Taakse
+    3300016: Pelaaja4Eteen
+    3300018: Pelaaja4Taakse
+    3300020: StartNappi
+    3300022: Pelikone
+    4300000: InfoNappi
+    4300002: StartNappi
+    4300004: Pelaaja3Eteen
+    4300006: Pelaaja3Taakse
+    4300008: Pelaaja4Taakse
+    4300010: Pelaaja4Eteen
+    4300012: Pelaaja2Eteen
+    4300014: Pelaaja2Taakse
+    4300016: Pelaaja1Taakse
+    4300018: Pelaaja1Eteen
+    4300020: Cube
+    4300022: Pelikone
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
