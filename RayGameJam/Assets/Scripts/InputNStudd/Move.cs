@@ -17,37 +17,50 @@ public class Move : MonoBehaviour
     }
     void Update()
     {
-        dTapTimer[0] += Time.deltaTime;
-        dTapTimer[1] += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.W))
+        if (!GameManager.instance.GetPlayerDead(0))
         {
-            TapDown(0);
+            dTapTimer[0] += Time.deltaTime;
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                TapDown(0);
+            }
+            if (Input.GetKey(KeyCode.W))
+            {
+                Tap(0);
+            }
+            if (Input.GetKeyUp(KeyCode.W))
+            {
+                TapUp(0);
+            }
         }
-        if (Input.GetKey(KeyCode.W))
+        if (!GameManager.instance.GetPlayerDead(1))
         {
-            Tap(0);
-        }
-        if (Input.GetKeyUp(KeyCode.W))
-        {
-            TapUp(0);
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            TapDown(1);
-        }
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            Tap(1);
-        }
-        if (Input.GetKeyUp(KeyCode.UpArrow))
-        {
-            TapUp(1);
+            dTapTimer[1] += Time.deltaTime;
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                TapDown(1);
+            }
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                Tap(1);
+            }
+            if (Input.GetKeyUp(KeyCode.UpArrow))
+            {
+                TapUp(1);
+            }
         }
     }
     private void TapDown(int id)
     {
+        if (dTapTimer[id] < dTapTime)
+        {
+            playerRotator[id].speed *= -1;
+        }
+        dTapTimer[id] = 0;
+
         storedPRotSpeed[id] = playerRotator[id].speed;
         playerRotator[id].speed = Vector3.zero;
+
     }
     private void Tap(int id)
     {
@@ -56,11 +69,5 @@ public class Move : MonoBehaviour
     private void TapUp(int id)
     {
         playerRotator[id].speed = storedPRotSpeed[id];
-
-        if (dTapTimer[id] < dTapTime)
-        {
-            playerRotator[id].speed *= -1;
-        }
-        dTapTimer[id] = 0;
     }
 }

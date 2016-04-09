@@ -8,19 +8,18 @@ public class SpawnGod : MonoBehaviour
     private int prev = 0;
     public void Spawn(int id)
     {
-        BasicFruit newFruit = (BasicFruit)MainPool.instance.GetObject(id).MainScript;
         int curPoint = NewPointId();
-        newFruit.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);
-        /*  if (turn)
-          {
-              newFruit.Set(spawnPoint[0].eulerAngles, spawnPoint[0].position);
-              turn = false;
-          }
-          else
-          {
-              newFruit.Set(spawnPoint[1].eulerAngles, spawnPoint[1].position);
-              turn = true;
-          }*/
+        switch (id)
+        {
+            case 2:
+                KillerFruit killerFruit = (KillerFruit)MainPool.instance.GetObject(id).MainScript;
+                killerFruit.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);
+                break;
+            default:
+                BasicFruit newFruit = (BasicFruit)MainPool.instance.GetObject(id).MainScript;
+                newFruit.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);
+                break;
+        }
     }
     private int NewPointId()
     {
