@@ -2,6 +2,13 @@
 using System.Collections;
 
 
+public enum en_TypeOfObject
+{
+    FRUIT,
+    MULIPLIER,
+    DOUBLEUP
+}
+
 public enum en_Fruits
 {
     Mansikka,
@@ -13,18 +20,18 @@ public enum en_Fruits
     Rypaleet,
     RayLogo,
     Vesimeloni,
-    IamNotFruit
+    IamNotFruit, X_1,
+    X_2,
+    X_3,
+    X_0,
+    X_Puoli
 }
 
 
 public enum en_Multipliers
 {
    
-    X_1,
-    X_2,
-    X_3,
-    X_0,
-    X_Puoli
+   
  
 }
 
