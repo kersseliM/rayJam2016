@@ -1,25 +1,26 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class KillerFruit : MonoBehaviour
+public class FleimsHanfly : MonoBehaviour
 {
     public MeshRenderer myRend;
-    public float lifeDistance = 1;
-    private float lifeCounter = 0;
+    public float growSpeed;
+    public float maxSize;
     private bool isSet = false;
     private bool isLiving = false;
-    private PoolLink myLink;
+    private AdditionalPoolLink myLink;
     private SphereCollider myCol;
-    private MoveForward myMove;
+    private Rigidbody myRB;
+
     new Transform transform;
     void Start()
     {
         if (!isSet)
         {
             transform = gameObject.transform;
-            myLink = GetComponent<PoolLink>();
+            myLink = GetComponent<AdditionalPoolLink>();
             myCol = GetComponent<SphereCollider>();
-            myMove = GetComponent<MoveForward>();
+            myRB = GetComponent<Rigidbody>();
             Whatabled(false);
             isSet = true;
         }
@@ -28,32 +29,23 @@ public class KillerFruit : MonoBehaviour
     {
         Start();
     }
-    public void Set(Vector3 eulers, Vector3 pos)
+    public void Set(Vector3 pos)
     {
-        transform.localEulerAngles = eulers;
         transform.position = pos;
-        lifeCounter = lifeDistance;
+        transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
         Whatabled(true);
     }
     void Update()
     {
         if (isLiving)
         {
-            lifeCounter -= Time.deltaTime * myMove.speed;
-            if (lifeCounter <= 0)
+            transform.localScale += new Vector3(growSpeed * Time.deltaTime, growSpeed * Time.deltaTime, growSpeed * Time.deltaTime);
+            if (transform.localScale.x >= maxSize)
             {
                 Deset();
             }
         }
     }
-    void OnCollisionEnter(Collision colleisson)
-    {
-        if (colleisson.gameObject.tag == "Player")
-        {
-            colleisson.gameObject.GetComponent<PlayerGuy>().Kill();
-        }
-    }
-
     public void Deset()
     {
         Whatabled(false);
@@ -63,7 +55,6 @@ public class KillerFruit : MonoBehaviour
     {
         myRend.enabled = state;
         myCol.enabled = state;
-        myMove.enabled = state;
         isLiving = state;
     }
 }

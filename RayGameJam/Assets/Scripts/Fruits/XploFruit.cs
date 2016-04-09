@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class KillerFruit : MonoBehaviour
+public class XploFruit : MonoBehaviour
 {
     public MeshRenderer myRend;
+    public Vector2 throwForce;
     public float lifeDistance = 1;
     private float lifeCounter = 0;
     private bool isSet = false;
     private bool isLiving = false;
     private PoolLink myLink;
     private SphereCollider myCol;
-    private MoveForward myMove;
+    private Rigidbody myRB;
+
     new Transform transform;
     void Start()
     {
@@ -19,7 +21,7 @@ public class KillerFruit : MonoBehaviour
             transform = gameObject.transform;
             myLink = GetComponent<PoolLink>();
             myCol = GetComponent<SphereCollider>();
-            myMove = GetComponent<MoveForward>();
+            myRB = GetComponent<Rigidbody>();
             Whatabled(false);
             isSet = true;
         }
@@ -34,12 +36,13 @@ public class KillerFruit : MonoBehaviour
         transform.position = pos;
         lifeCounter = lifeDistance;
         Whatabled(true);
+        myRB.AddForce((transform.forward + transform.up) * Random.Range(throwForce.x, throwForce.y), ForceMode.Impulse);
     }
     void Update()
     {
         if (isLiving)
         {
-            lifeCounter -= Time.deltaTime * myMove.speed;
+            lifeCounter -= Time.deltaTime;
             if (lifeCounter <= 0)
             {
                 Deset();
@@ -48,22 +51,31 @@ public class KillerFruit : MonoBehaviour
     }
     void OnCollisionEnter(Collision colleisson)
     {
-        if (colleisson.gameObject.tag == "Player")
+        if (colleisson.gameObject.tag == "Ground")
         {
-            colleisson.gameObject.GetComponent<PlayerGuy>().Kill();
+            FleimsHanfly fleims = (FleimsHanfly)AdditionalPool.instance.GetObject(0).MainScript;
+            fleims.Set(transform.position);
+            Deset();
         }
     }
-
     public void Deset()
     {
         Whatabled(false);
+        myRB.velocity = Vector3.zero;
         myLink.ReturnToPool();
     }
     private void Whatabled(bool state)
     {
         myRend.enabled = state;
         myCol.enabled = state;
-        myMove.enabled = state;
         isLiving = state;
+        if (state)
+        {
+            myRB.isKinematic = false;
+        }
+        else
+        {
+            myRB.isKinematic = true;
+        }
     }
 }
