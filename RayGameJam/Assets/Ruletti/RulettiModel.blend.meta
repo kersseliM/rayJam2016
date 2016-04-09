@@ -1,15 +1,27 @@
 fileFormatVersion: 2
-guid: e1561cf0c1104a147816856988d7eab0
-timeCreated: 1460181246
+guid: 4e5d0830e84a0204a82aa4d834d49e0e
+timeCreated: 1460183565
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: RulettiSisakeha
+    100004: RulettiUlkokeha
+    100006: RulettiValikeha
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cylinder
+    400002: RulettiSisakeha
+    400004: RulettiUlkokeha
+    400006: RulettiValikeha
+    2300000: RulettiSisakeha
+    2300002: RulettiUlkokeha
+    2300004: RulettiValikeha
+    3300000: RulettiSisakeha
+    3300002: RulettiUlkokeha
+    3300004: RulettiValikeha
+    4300000: RulettiValikeha
+    4300002: RulettiUlkokeha
+    4300004: RulettiSisakeha
     7400000: Default Take
     9500000: //RootNode
   materials:
