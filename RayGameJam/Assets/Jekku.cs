@@ -6,6 +6,7 @@ public class Jekku : MonoBehaviour {
     public float todenn= 4;
     SpriteRenderer sp;
     bool check;
+    public Animator sdlsdka;
 	// Use this for initialization
 	void Start () {
 
@@ -19,6 +20,7 @@ public class Jekku : MonoBehaviour {
         check = true;
         if (Random.Range(0, 2000) >= todenn)
         {
+            sdlsdka.enabled = true;
             sp.enabled = true;
         }
     }
