@@ -3,14 +3,12 @@ using System.Collections;
 
 public class SlotMachineObject : MonoBehaviour
 {
-   SimpleRotate rotareObject;
-
-
-   public en_TypeOfObject MYTYPE;
-        
-
+    SimpleRotate rotareObject;
     public en_Fruits MyID;
     Vector3 originalScale;
+    bool once;
+    BoxCollider bc;
+    Vector3 startLocalPosition;
     // Use this for initialization
     void Awake()
     {
@@ -18,7 +16,10 @@ public class SlotMachineObject : MonoBehaviour
         {
             rotareObject = transform.GetChild(0).gameObject.GetComponent<SimpleRotate>();
         }
+        bc = GetComponent<BoxCollider>();
+       // bc.size = bc.size * 2;
         originalScale = transform.localScale;
+        startLocalPosition = transform.localPosition;
     }
 
     // Update is called once per frame
@@ -30,24 +31,33 @@ public class SlotMachineObject : MonoBehaviour
     public void ActivateMe()
     {
 
-        if(rotareObject != null)
-      rotareObject.enabled = true;
-      transform.localScale = originalScale * 1.4f;
+        if (!once)
+        {
 
+            Vector3 pos = transform.position;
+            pos.y = SlottiMaster.Instance.y;
+            transform.position = pos;
 
+            if (rotareObject != null)
+                rotareObject.enabled = true;
+            transform.localScale = originalScale * 1.4f;
 
+            gameObject.layer = 10;
 
-
-
-        print(MyID);
+            SlottiMaster.Instance.RegisterMe(MyID);
+            once = true;
+        }
     }
 
 
     public void DeActiveMe()
     {
+        gameObject.layer = 9;
+        once = false;
         transform.localScale = originalScale;
+        transform.localPosition = startLocalPosition;
         if (rotareObject != null)
-        rotareObject.enabled = false;
+            rotareObject.enabled = false;
     }
 
 }

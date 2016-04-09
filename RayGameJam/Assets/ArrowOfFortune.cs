@@ -5,9 +5,13 @@ public class ArrowOfFortune : MonoBehaviour
 {
 
     public Transform spawnPoint;
-    float rayLenght = 3;
+    float rayLenght = 30;
+    BoxCollider bc;
     
     Camera ac;
+
+
+
     // Use this for initialization
 
     // Update is called once per frame
@@ -28,6 +32,7 @@ public class ArrowOfFortune : MonoBehaviour
             print(rayhit.collider.gameObject.name);
 
             rayhit.collider.gameObject.GetComponent<SlotMachineObject>().ActivateMe();
+                SlottiMaster.Instance.TrueStopReel();
 
             return true;
         }

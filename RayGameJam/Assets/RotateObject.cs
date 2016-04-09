@@ -32,27 +32,35 @@ public class RotateObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isActive == true)
-        {
+
             if (isSpinning == true)
                 RotateObjecy(speed);
-
-            if (Input.GetKeyDown(stop))
-            {
-                StopReel();
-            }
-            if (Input.GetKeyDown(start))
-            {
-                ReStartReel();
-            }
-        }
     }
 
     public void StopReel()
     {
         SlottiMaster.Instance.rayCastArrow();
+        
+      //  isSpinning = false;
+    }
+
+    public void trueStop()
+    {
+        print("trueds");
         isSpinning = false;
 
+    }
+
+
+  public  void ActiveMe()
+    {
+        isActive = true;
+        isSpinning = true;
+        print(gameObject.name);
+        foreach (SlotMachineObject t in myfruSits)
+        {
+            t.gameObject.layer = 9;
+        }
 
     }
 
@@ -77,7 +85,6 @@ public class RotateObject : MonoBehaviour
     {
         print("Restart");
         isSpinning = true;
-        isActive = true;
 
         gameObject.layer = SlottiMaster.Instance.lm_UnActive;
 
@@ -86,7 +93,7 @@ public class RotateObject : MonoBehaviour
             dk.DeActiveMe();
         }
 
-        foreach (Transform t in transform)
+        foreach (SlotMachineObject t in myfruSits)
         {
             t.gameObject.layer = 9;
         }
