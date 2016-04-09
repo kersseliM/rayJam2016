@@ -1,0 +1,170 @@
+fileFormatVersion: 2
+guid: 2aafed829cb507a4b928ca79a1e13964
+timeCreated: 1460168189
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Edge1
+    100002: Edge2
+    100004: Edge3
+    100006: Edge4
+    100008: Edge5
+    100010: Edge6
+    100012: Edge7
+    100014: Edge8
+    100016: Edge9
+    100018: Fruit1
+    100020: Fruit2
+    100022: Fruit3
+    100024: Fruit4
+    100026: Fruit5
+    100028: Fruit6
+    100030: Fruit7
+    100032: Fruit8
+    100034: Fruit9
+    100036: //RootNode
+    100038: SlotMachine
+    400000: Edge1
+    400002: Edge2
+    400004: Edge3
+    400006: Edge4
+    400008: Edge5
+    400010: Edge6
+    400012: Edge7
+    400014: Edge8
+    400016: Edge9
+    400018: Fruit1
+    400020: Fruit2
+    400022: Fruit3
+    400024: Fruit4
+    400026: Fruit5
+    400028: Fruit6
+    400030: Fruit7
+    400032: Fruit8
+    400034: Fruit9
+    400036: SlotMachine
+    400038: //RootNode
+    2300000: Edge1
+    2300002: Edge2
+    2300004: Edge3
+    2300006: Edge4
+    2300008: Edge5
+    2300010: Edge6
+    2300012: Edge7
+    2300014: Edge8
+    2300016: Edge9
+    2300018: Fruit1
+    2300020: Fruit2
+    2300022: Fruit3
+    2300024: Fruit4
+    2300026: Fruit5
+    2300028: Fruit6
+    2300030: Fruit7
+    2300032: Fruit8
+    2300034: Fruit9
+    2300036: SlotMachine
+    3300000: Edge1
+    3300002: Edge2
+    3300004: Edge3
+    3300006: Edge4
+    3300008: Edge5
+    3300010: Edge6
+    3300012: Edge7
+    3300014: Edge8
+    3300016: Edge9
+    3300018: Fruit1
+    3300020: Fruit2
+    3300022: Fruit3
+    3300024: Fruit4
+    3300026: Fruit5
+    3300028: Fruit6
+    3300030: Fruit7
+    3300032: Fruit8
+    3300034: Fruit9
+    3300036: SlotMachine
+    4300000: Edge9
+    4300002: Edge8
+    4300004: Edge7
+    4300006: Edge6
+    4300008: Edge5
+    4300010: Edge4
+    4300012: Edge3
+    4300014: Edge2
+    4300016: Edge1
+    4300018: Fruit2
+    4300020: Fruit3
+    4300022: Fruit4
+    4300024: Fruit5
+    4300026: Fruit6
+    4300028: Fruit7
+    4300030: Fruit8
+    4300032: Fruit9
+    4300034: Fruit1
+    4300036: SlotMachine
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
