@@ -8,4 +8,6 @@
 8. Efekti: Pelaaja törmää takaapäin
 
 
-huom. Ota mun scene siihen sun scenen viereen.
+huom. Ota mun scene siihen sun scenen viereen. Se slotti testi scene.
+
+Slottitesti + jeesbois pitää olla yhessä.
