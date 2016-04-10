@@ -20,9 +20,17 @@ public class BrokerMaster : MonoBehaviour
         SlottiMaster.Instance.IntenseMore();
 
     }
-    // Update is called once per frame
-    void Update()
-    {
 
+
+    public void TRANSFORM(int id)
+    {
+        pelaajienHaamut[id].TransForm();
     }
+
+    public void UN___TRANSFORM(int id)
+    {
+        pelaajienHaamut[id].UnTransform();
+    }
+    // Update is called once per frame
+
 }
