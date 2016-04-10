@@ -11,7 +11,6 @@ public class MeneRikki : MonoBehaviour
     void Start()
     {
         palaset = new Transform[transform.childCount];
-        print(transform.childCount);
         for (int i = 0; i < transform.childCount; i++)
         {
             palaset[i] = transform.GetChild(i);
@@ -23,8 +22,9 @@ public class MeneRikki : MonoBehaviour
     public void BrokeMe()
     {
 
-      
-        eiRikkiOleva.gameObject.SetActive (false);
+        print(eiRikkiOleva);
+        eiRikkiOleva.SetActive (false);
+        Destroy(eiRikkiOleva);
 
         foreach(Transform t in palaset)
         {
