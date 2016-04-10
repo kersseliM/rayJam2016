@@ -26,6 +26,7 @@ public class RotateObject : MonoBehaviour
         {
             myfruSits[i] = t.GetChild(i).gameObject.GetComponent<SlotMachineObject>();
         }
+        ORIGINALSpeed = speed;
     }
 
     // Update is called once per frame
@@ -36,11 +37,19 @@ public class RotateObject : MonoBehaviour
                 RotateObjecy(speed);
     }
 
+    float ORIGINALSpeed;
     public void StopReel()
     {
-        SlottiMaster.Instance.rayCastArrow();
+        speed = ORIGINALSpeed * 0.5f;
+        Invoke("RAYARROW", 0.5f);
         
       //  isSpinning = false;
+    }
+
+
+    void RAYARROW()
+    {
+        SlottiMaster.Instance.rayCastArrow();
     }
 
     public void trueStop()

@@ -11,15 +11,20 @@ public class SpawnGod : MonoBehaviour
         int curPoint = NewPointId();
         switch (id)
         {
-            case 0:
+            case 1:
                 XploFruit xploFruit = (XploFruit)MainPool.instance.GetObject(id).MainScript;
                 xploFruit.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);
                 break;
-            case 2:
+            case 6:
                 KillerFruit killerFruit = (KillerFruit)MainPool.instance.GetObject(id).MainScript;
                 killerFruit.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);
                 break;
+            case 2:
+                KillerFruit killerFruit2 = (KillerFruit)MainPool.instance.GetObject(id).MainScript;
+                killerFruit2.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);
+                break;
             default:
+                print(id);
                 BasicFruit newFruit = (BasicFruit)MainPool.instance.GetObject(id).MainScript;
                 newFruit.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);
                 break;

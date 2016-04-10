@@ -85,6 +85,7 @@ public class EventManager : MonoBehaviour
                 spawnGod.Spawn(id);
                 break;
             default:
+                spawnGod.Spawn(id);
                 break;
         }
     }

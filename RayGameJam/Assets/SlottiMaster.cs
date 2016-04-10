@@ -58,7 +58,7 @@ public class SlottiMaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
 
             if (!endOfSpin)
@@ -93,6 +93,7 @@ public class SlottiMaster : MonoBehaviour
         foreach (RotateObject r in SLOTS)
         {
             r.ReStartReel();
+            r.speed = Random.Range(8, 40);
         }
 
         ActiveSlot = SLOTS[0];
@@ -107,7 +108,6 @@ public class SlottiMaster : MonoBehaviour
             if (arrowOfFortune.RayCast() == false)
             {
                 ActiveSlot.RotateObjecy(3);
-                print("false");
                 Invoke("rayCastArrow", 0.02F);
             }
             else
@@ -177,6 +177,20 @@ public class SlottiMaster : MonoBehaviour
             print("KaksiOikein");
             EventManager.instance.AddEvent(FirstSlot, kaksX_amount);  
         }
+
+        if (FirstSlot == ThirdSlot && SecondSlot != FirstSlot)
+        {
+            print("KaksiOikein");
+            EventManager.instance.AddEvent(FirstSlot, kaksX_amount);
+        }
+
+        if (ThirdSlot == SecondSlot && SecondSlot != FirstSlot)
+        {
+            print("KaksiOikein");
+            EventManager.instance.AddEvent(FirstSlot, kaksX_amount);
+        }
+
+
         if (FirstSlot == SecondSlot && SecondSlot!= ThirdSlot)
         {
             print("JÄTII POTTI");
