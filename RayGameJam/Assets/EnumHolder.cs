@@ -1,6 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum additionalPool
+{
+    fleims,
+    audioCannon,
+    audioXplo,
+    audioSplat1,
+    audioSplat2,
+    audioSplat3,
+    audioVictory1,
+    audioVictory2,
+    audioPCol,
+    effSmoke,
+    effXploNorm,
+    effXploSpiky,
+    effBump,
+    effDash
+}
 
 public enum en_TypeOfObject
 {

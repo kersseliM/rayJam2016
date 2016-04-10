@@ -25,6 +25,10 @@ public class PlayerGuy : MonoBehaviour
     {
         if (colleisson.gameObject.tag == "Player" && hitTimer <= 0)
         {
+            EffetcHandly spawnEff = (EffetcHandly)AdditionalPool.instance.GetObject((int)additionalPool.effBump).MainScript;
+            spawnEff.Set(transform.position);
+            AudioCreatureHandly spawnAudio = (AudioCreatureHandly)AdditionalPool.instance.GetObject((int)additionalPool.audioPCol).MainScript;
+            spawnAudio.Set(transform.position);
             Rigidbody enemyRB = colleisson.gameObject.GetComponent<Rigidbody>();
             Vector3 forceDir = (transform.position - colleisson.gameObject.transform.position);
             enemyRB.AddForce(new Vector3(forceDir.x * myRB.velocity.x, forceDir.y * myRB.velocity.y, forceDir.z * myRB.velocity.z) * kickForce, ForceMode.Impulse);

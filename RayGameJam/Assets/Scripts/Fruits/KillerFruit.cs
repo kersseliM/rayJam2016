@@ -51,6 +51,12 @@ public class KillerFruit : MonoBehaviour
         if (colleisson.gameObject.tag == "Player")
         {
             colleisson.gameObject.GetComponent<PlayerGuy>().Kill();
+
+            EffetcHandly spawnEff = (EffetcHandly)AdditionalPool.instance.GetObject((int)additionalPool.effXploSpiky).MainScript;
+            spawnEff.Set(transform.position);
+            AudioCreatureHandly spawnAudio = (AudioCreatureHandly)AdditionalPool.instance.GetObject(Random.Range((int)additionalPool.audioSplat1, (int)additionalPool.audioSplat3 + 1)).MainScript;
+            spawnAudio.Set(transform.position);
+            Deset();
         }
     }
 

@@ -1,11 +1,6 @@
-1. Äänet + musiikki
-2. Pelaajan sprinttiefekti paikoilleen
-3. Appelsiinin uusi räjähdysefekti paikoilleen
 4. Game over canvas TEXTI mahtumaan uudelle paikalleen.
-5. Ruudussa on välillä jotain outoa vivahdetta...
-6. Efekti: Hullunruoho poks
-7. Efekti: Pelaajat törmää
-8. Efekti: Pelaaja törmää takaapäin
+todellaki 5. Ruudussa on välillä jotain outoa vivahdetta...
+":-D" 8. Efekti: Pelaaja törmää takaapäin
 
 
 huom. Ota mun scene siihen sun scenen viereen. Se slotti testi scene.

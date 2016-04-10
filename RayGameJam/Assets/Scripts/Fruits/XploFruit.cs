@@ -55,6 +55,12 @@ public class XploFruit : MonoBehaviour
         {
             FleimsHanfly fleims = (FleimsHanfly)AdditionalPool.instance.GetObject(0).MainScript;
             fleims.Set(transform.position);
+            EffetcHandly spawnEff = (EffetcHandly)AdditionalPool.instance.GetObject((int)additionalPool.effXploNorm).MainScript;
+            spawnEff.Set(transform.position);
+            EffetcHandly spawnEff2 = (EffetcHandly)AdditionalPool.instance.GetObject((int)additionalPool.effSmoke).MainScript;
+            spawnEff2.Set(transform.position);
+            AudioCreatureHandly spawnAudio = (AudioCreatureHandly)AdditionalPool.instance.GetObject((int)additionalPool.audioXplo).MainScript;
+            spawnAudio.Set(transform.position);
             Deset();
         }
     }

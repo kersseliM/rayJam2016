@@ -64,6 +64,8 @@ public class Move : MonoBehaviour
     }
     private void TapUp(int id, int dir)
     {
+        EffetcHandly spawnEff = (EffetcHandly)AdditionalPool.instance.GetObject((int)additionalPool.effDash).MainScript;
+        spawnEff.Set(playerTransform[id].position);
         playerRB[id].AddForce(playerTransform[id].forward * power * Time.deltaTime * dir, ForceMode.Impulse);
     }
 }
