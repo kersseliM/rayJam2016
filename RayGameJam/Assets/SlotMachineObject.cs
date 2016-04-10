@@ -67,7 +67,7 @@ public class SlotMachineObject : MonoBehaviour
             transform.parent = null;
             transform.position = SlottiMaster.Instance.getSpawnPosition();
 
-        
+            MusicBox.instance.InstantiateSoundObject(MusicBox.instance.SLOTLOCK);
 
        //     gameObject.layer = 10;
           

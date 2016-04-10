@@ -10,6 +10,7 @@ public class RotateObject : MonoBehaviour
     public KeyCode stop, start;
     bool isSpinning = true;
 
+    public int MySlotID;
 
     SlotMachineObject[] myfruSits;
     public bool isActive = true;
@@ -54,6 +55,7 @@ public class RotateObject : MonoBehaviour
 
     public void trueStop()
     {
+        MusicBox.instance.slotReels[MySlotID].enabled = false;
         isSpinning = false;
 
     }
@@ -74,6 +76,7 @@ public class RotateObject : MonoBehaviour
     {
         isActive = true;
         isSpinning = true;
+        MusicBox.instance.slotReels[MySlotID].enabled = false;
         print(gameObject.name);
         foreach (SlotMachineObject t in myfruSits)
         {

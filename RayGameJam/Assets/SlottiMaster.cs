@@ -175,27 +175,38 @@ public class SlottiMaster : MonoBehaviour
         if (FirstSlot == SecondSlot && ThirdSlot != FirstSlot)
         {
             print("KaksiOikein");
+            MusicBox.instance.InstantiateSoundObject(MusicBox.instance.TwoWin);
             EventManager.instance.AddEvent(FirstSlot, kaksX_amount);  
         }
 
         if (FirstSlot == ThirdSlot && SecondSlot != FirstSlot)
         {
             print("KaksiOikein");
+            MusicBox.instance.InstantiateSoundObject(MusicBox.instance.TwoWin);
             EventManager.instance.AddEvent(FirstSlot, kaksX_amount);
         }
 
         if (ThirdSlot == SecondSlot && SecondSlot != FirstSlot)
         {
             print("KaksiOikein");
+            MusicBox.instance.InstantiateSoundObject(MusicBox.instance.TwoWin);
             EventManager.instance.AddEvent(FirstSlot, kaksX_amount);
         }
 
 
         if (FirstSlot == SecondSlot && SecondSlot!= ThirdSlot)
         {
-            print("JÄTII POTTI");
+            print("JÄTII POTTI"); MusicBox.instance.InstantiateSoundObject(MusicBox.instance.kolmeOIkein);
             EventManager.instance.AddEvent(FirstSlot, jackPotAmount);
         }
+
+        if (FirstSlot == 8 && SecondSlot ==8 && ThirdSlot == 8)
+        {
+            print("Super JÄfsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdTII POTTI"); MusicBox.instance.InstantiateSoundObject(MusicBox.instance.jattipotti);
+ 
+         //   EventManager.instance.AddEvent(FirstSlot, jackPotAmount);
+        }
+
     }
 
 public   Vector3 getSpawnPosition()
