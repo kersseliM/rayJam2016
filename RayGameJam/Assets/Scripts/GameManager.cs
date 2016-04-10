@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject GGPanel;
     public Text GGText;
 
+    public BrokerMaster bmaster;
     private bool[] playerDead = new bool[4];
 
     void Awake()
@@ -29,9 +30,12 @@ public class GameManager : MonoBehaviour
     }
 
     public bool GetPlayerDead(int id) { return playerDead[id]; }
+   
+    
     public void SetPlayerDead(int id)
     {
         playerDead[id] = true;
+        bmaster.Broke(id);
         byte livingCount = 0;
         int winnerId = 608;
         for (int i = 0; i < playerDead.Length; i++)
