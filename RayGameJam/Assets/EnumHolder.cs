@@ -37,11 +37,7 @@ public enum en_Fruits
     Rypaleet,
     RayLogo,
     Vesimeloni,
-    IamNotFruit, X_1,
-    X_2,
-    X_3,
-    X_0,
-    X_Puoli
+    IamNotFruit
 }
 
 
