@@ -15,7 +15,10 @@ public class BrokerMaster : MonoBehaviour
 
     public void Broke(int id)
     {
+        MusicBox.instance.setIntesity();
         pelaajienHaamut[id].BrokeMe();
+        SlottiMaster.Instance.IntenseMore();
+
     }
     // Update is called once per frame
     void Update()

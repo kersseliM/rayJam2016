@@ -19,6 +19,8 @@ public class SlottiMaster : MonoBehaviour
     public float y;
     public float z = -5;
 
+    public float intesitymultiplier;
+
    en_Fruits[]  oikeaLottoRivi;
 
     public KeyCode stop, start;
@@ -83,17 +85,24 @@ public class SlottiMaster : MonoBehaviour
         ActiveSlot.trueStop();
     }
 
+    public void IntenseMore()
+    {
+
+        intesitymultiplier = intesitymultiplier * 4f;
+    }
+
     public void RestartSlots()
     {
         endOfSpin = false;
         count = 0;
-       
 
+        intesitymultiplier = 4;
         print("RestartSlots");
         foreach (RotateObject r in SLOTS)
         {
             r.ReStartReel();
-            r.speed = Random.Range(8, 40);
+            r.speed = Random.Range(intesitymultiplier, 40);
+            
         }
 
         ActiveSlot = SLOTS[0];

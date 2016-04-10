@@ -76,8 +76,7 @@ public class RotateObject : MonoBehaviour
     {
         isActive = true;
         isSpinning = true;
-        MusicBox.instance.slotReels[MySlotID].enabled = false;
-        print(gameObject.name);
+        MusicBox.instance.slotReels[MySlotID].enabled = true;
         foreach (SlotMachineObject t in myfruSits)
         {
             t.gameObject.layer = 9;
@@ -107,6 +106,7 @@ public class RotateObject : MonoBehaviour
     {
         print("Restart");
         isSpinning = true;
+        MusicBox.instance.slotReels[MySlotID].enabled = true;
 
         gameObject.layer = SlottiMaster.Instance.lm_UnActive;
 

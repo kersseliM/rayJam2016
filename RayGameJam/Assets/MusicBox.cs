@@ -12,6 +12,7 @@ public class MusicBox : MonoBehaviour
     public GameObject TwoWin;
     public GameObject SLOTLOCK;
     public GameObject kolmeOIkein;
+    float originalPitch;
 
     void Awake()
     {
@@ -27,7 +28,8 @@ public class MusicBox : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        print("Start");
+        originalPitch = GetComponent<AudioSource>().pitch;
     }
 
     public void InstantiateSoundObject(GameObject soundOnsd)
@@ -39,6 +41,19 @@ public class MusicBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+    }
+
+    public void setIntesity()
+    {
+
+        GetComponent<AudioSource>().pitch += 0.1f;
+
+        foreach (AudioSource ac in slotReels)
+        {
+
+            ac.pitch+= 0.1f;
+        }
 
     }
 
