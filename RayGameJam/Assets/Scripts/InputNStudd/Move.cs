@@ -17,7 +17,7 @@ public class Move : MonoBehaviour
     }
     void Update()
     {
-        if (!GameManager.instance.GetPlayerDead(1))
+        if (!GameManager.instance.GetPlayerDead(0))
         {
             if (Input.GetButtonUp("P1F"))
             {
@@ -28,7 +28,7 @@ public class Move : MonoBehaviour
                 TapUp(1, -1);
             }
         }
-        if (!GameManager.instance.GetPlayerDead(0))
+        if (!GameManager.instance.GetPlayerDead(1))
         {
             if (Input.GetButtonUp("P2F"))
             {
@@ -66,6 +66,6 @@ public class Move : MonoBehaviour
     {
         EffetcHandly spawnEff = (EffetcHandly)AdditionalPool.instance.GetObject((int)additionalPool.effDash).MainScript;
         spawnEff.Set(playerTransform[id].position);
-        playerRB[id].AddForce(playerTransform[id].forward * power * Time.deltaTime * dir, ForceMode.Impulse);
+        playerRB[id].AddForce(playerTransform[id].forward * power * dir, ForceMode.Impulse);
     }
 }

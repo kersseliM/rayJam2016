@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour
     public Text GGText;
 
     public BrokerMaster bmaster;
+    public ScoreUpdator scoreUpdator;
     private bool[] playerDead = new bool[4];
+    private bool isWon = false;
 
     void Awake()
     {
@@ -55,6 +57,11 @@ public class GameManager : MonoBehaviour
     {
         AudioCreatureHandly spawnAudio = (AudioCreatureHandly)AdditionalPool.instance.GetObject((int)additionalPool.audioVictory1).MainScript;
         spawnAudio.Set(transform.position);
+        if (!isWon)
+        {
+            ScoreHolder.instance.AddScore(id);
+        }
+        scoreUpdator.UpdateScore();
         GGPanel.SetActive(true);
         GGText.text = "Player  " + (id + 1) + "  Rekted  'ém  All!";
     }

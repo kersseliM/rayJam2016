@@ -6,6 +6,7 @@ public class SSJFruit : MonoBehaviour
     public MeshRenderer myRend;
     public float lifeDistance = 1;
     public float duration;
+    public GameObject mySSJ;
     private float lifeCounter = 0;
     private bool isSet = false;
     private bool isLiving = false;
@@ -67,6 +68,7 @@ public class SSJFruit : MonoBehaviour
     }
     private void Whatabled(bool state)
     {
+        mySSJ.SetActive(state);
         myRend.enabled = state;
         myCol.enabled = state;
         myMove.enabled = state;

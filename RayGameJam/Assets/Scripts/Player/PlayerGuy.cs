@@ -107,13 +107,13 @@ public class PlayerGuy : MonoBehaviour
         {
             GameManager.instance.bmaster.TRANSFORM(myId);
             SSJTimer += duration;
-            kickForce *= 1000;
+            kickForce *= 250;
         }
         else
         {
             GameManager.instance.bmaster.UN___TRANSFORM(myId);
             SSJTimer = 0;
-            kickForce /= 1000;
+            kickForce /= 250;
         }
     }
 }
