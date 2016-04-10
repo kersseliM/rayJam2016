@@ -1,5 +1,3 @@
-1. Default napit oikein
-2. Pelaajien katoaminen kuollessa
 3. MARKO slotit kuntoon ja yhteydessä peliin
 
 KLO 11.30

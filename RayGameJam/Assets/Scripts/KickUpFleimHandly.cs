@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FleimsHanfly : MonoBehaviour
+public class KickUpFleimHandly : MonoBehaviour
 {
     public MeshRenderer myRend;
     public float growSpeed;
     public float maxSize;
+    public float upPower;
+    public float dirPower;
     private bool isSet = false;
     private bool isLiving = false;
     private AdditionalPoolLink myLink;
@@ -42,6 +44,17 @@ public class FleimsHanfly : MonoBehaviour
             {
                 Deset();
             }
+        }
+    }
+    void OnTriggerEnter(Collider colleisson)
+    {
+        if (colleisson.gameObject.tag == "Player")
+        {
+            colleisson.gameObject.GetComponent<Rigidbody>().AddForce(((transform.position - colleisson.gameObject.transform.position) * dirPower) + (transform.up * upPower), ForceMode.Impulse);
+            EffetcHandly spawnEff2 = (EffetcHandly)AdditionalPool.instance.GetObject((int)additionalPool.effSmoke).MainScript;
+            spawnEff2.Set(colleisson.gameObject.transform.position);
+            AudioCreatureHandly spawnAudio = (AudioCreatureHandly)AdditionalPool.instance.GetObject((int)additionalPool.audioPCol).MainScript;
+            spawnAudio.Set(transform.position);
         }
     }
     public void Deset()
