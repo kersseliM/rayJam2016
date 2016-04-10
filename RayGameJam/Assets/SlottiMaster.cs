@@ -142,8 +142,8 @@ public class SlottiMaster : MonoBehaviour
 
                 CancelInvoke("i");
                 endOfSpin = true;
-                print("Oikea lotto rivi on " + oikeaLottoRivi[0]+ oikeaLottoRivi[1]+ oikeaLottoRivi[2]);
-
+         
+                CalculateSpinResults();
             }
         }
 
@@ -154,7 +154,30 @@ public class SlottiMaster : MonoBehaviour
 
    public void CalculateSpinResults()
     {
-        EventManager.instance.AddEvent();
+        print("Oikea lotto rivi on " + oikeaLottoRivi[0] + oikeaLottoRivi[1] + oikeaLottoRivi[2]);
+
+        int FirstSlot = (int)oikeaLottoRivi[0];
+        int SecondSlot = (int)oikeaLottoRivi[1];
+        int ThirdSlot = (int)oikeaLottoRivi[2];
+
+        int standartAmount =3;
+        int kaksX_amount =5;
+        int jackPotAmount =15;
+
+        EventManager.instance.AddEvent(FirstSlot, standartAmount);
+        EventManager.instance.AddEvent(SecondSlot, standartAmount);
+        EventManager.instance.AddEvent(ThirdSlot, standartAmount);
+       
+        if (FirstSlot == SecondSlot && ThirdSlot != FirstSlot)
+        {
+            print("KaksiOikein");
+            EventManager.instance.AddEvent(FirstSlot, kaksX_amount);  
+        }
+        if (FirstSlot == SecondSlot && SecondSlot!= ThirdSlot)
+        {
+            print("JÄTII POTTI");
+            EventManager.instance.AddEvent(FirstSlot, jackPotAmount);
+        }
     }
 
 public   Vector3 getSpawnPosition()
