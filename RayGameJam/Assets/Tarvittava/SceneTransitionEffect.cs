@@ -23,12 +23,18 @@ public class SceneTransitionEffect : MonoBehaviour
         screenHeight = Screen.height;
         screenWidht = Screen.width;
 
-     Invoke("StartLerp",5);
+     Invoke("StartLerp",2);
     }
 
     public void StartLerp()
     {
         a();
+        Invoke("d", 2);
+    }
+
+    void d()
+    {
+        Application.LoadLevel(1);
     }
 
     void a()
