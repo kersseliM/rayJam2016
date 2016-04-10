@@ -105,13 +105,15 @@ public class PlayerGuy : MonoBehaviour
         mySSJHair.SetActive(state);
         if (state)
         {
+            GameManager.instance.bmaster.TRANSFORM(myId);
             SSJTimer += duration;
-            kickForce *= 10;
+            kickForce *= 1000;
         }
         else
         {
+            GameManager.instance.bmaster.UN___TRANSFORM(myId);
             SSJTimer = 0;
-            kickForce /= 10;
+            kickForce /= 1000;
         }
     }
 }

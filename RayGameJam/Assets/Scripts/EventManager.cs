@@ -59,6 +59,7 @@ public class EventManager : MonoBehaviour
 
     public void AddEvent(int id, int amount)
     {
+        print("aaa " + id);
         if ((en_Fruits)id != en_Fruits.RayLogo)
         {
             for (int i = 0; i < amount; i++)

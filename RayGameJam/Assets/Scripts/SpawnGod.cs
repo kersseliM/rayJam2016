@@ -35,7 +35,12 @@ public class SpawnGod : MonoBehaviour
                 LowSpinnerFruit spinLowFruit = (LowSpinnerFruit)MainPool.instance.GetObject((int)id).MainScript;
                 spinLowFruit.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);
                 break;
+            case en_Fruits.IamNotFruit:
+                SSJFruit SSJFruit = (SSJFruit)MainPool.instance.GetObject((int)id).MainScript;
+                SSJFruit.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);
+                break;
             default:
+                print(id);
                 BasicFruit newFruit = (BasicFruit)MainPool.instance.GetObject((int)id).MainScript;
                 newFruit.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);
                 break;

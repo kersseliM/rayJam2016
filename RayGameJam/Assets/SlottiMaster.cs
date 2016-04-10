@@ -226,7 +226,7 @@ public class SlottiMaster : MonoBehaviour
         {
         MusicBox.instance.InstantiateSoundObject(MusicBox.instance.kolmeOIkein);
             EventManager.instance.AddEvent(FirstSlot, jackPotAmount);
-            EventManager.instance.AddEvent(10, 1);
+            EventManager.instance.AddEvent(9, 1);
         }
 
         if (FirstSlot == 8 && SecondSlot ==8 && ThirdSlot == 8)
