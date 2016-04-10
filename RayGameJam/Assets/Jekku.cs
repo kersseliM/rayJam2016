@@ -19,7 +19,7 @@ public class Jekku : MonoBehaviour {
     void c()
     {
         check = true;
-        if (Random.Range(0, 500) >= todenn)
+        if (Random.Range(0, 2000) >= todenn)
         {
             sdlsdka.enabled = true;
             sp.enabled = true;
