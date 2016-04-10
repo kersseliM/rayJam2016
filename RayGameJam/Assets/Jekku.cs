@@ -7,6 +7,7 @@ public class Jekku : MonoBehaviour {
     SpriteRenderer sp;
     bool check;
     public Animator sdlsdka;
+    bool once;
 	// Use this for initialization
 	void Start () {
 
@@ -18,11 +19,30 @@ public class Jekku : MonoBehaviour {
     void c()
     {
         check = true;
-        if (Random.Range(0, 2000) >= todenn)
+        if (Random.Range(0, 500) >= todenn)
         {
             sdlsdka.enabled = true;
             sp.enabled = true;
         }
+    }
+
+
+    void Update()
+    {
+
+
+        if (Input.GetKeyDown(KeyCode.Delete))
+        {
+            if (!once)
+            {
+                sdlsdka.enabled = true;
+                sp.enabled = true;
+                once = true;
+            }
+
+        }
+
+
     }
 
 

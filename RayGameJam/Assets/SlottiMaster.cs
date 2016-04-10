@@ -133,7 +133,7 @@ public class SlottiMaster : MonoBehaviour
             oikeaLottoRivi[count] = MyID;
 
             count++;
-            Invoke("i", 1);
+            Invoke("i", 0.2f);
             // ActiveSlot = SLOTS[count];
 
 
@@ -149,6 +149,13 @@ public class SlottiMaster : MonoBehaviour
 
     }
 
+
+
+
+   public void CalculateSpinResults()
+    {
+        EventManager.instance.AddEvent();
+    }
 
 public   Vector3 getSpawnPosition()
     {

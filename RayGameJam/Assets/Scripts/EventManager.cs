@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class EventManager : MonoBehaviour
 {
-    public EventManager instance;
+    public static EventManager instance;
     public float eventDelay = 1f;
     public SpawnGod spawnGod;
 
