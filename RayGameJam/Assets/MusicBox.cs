@@ -49,6 +49,10 @@ public class MusicBox : MonoBehaviour
 
         GetComponent<AudioSource>().pitch += 0.1f;
 
+        if(GetComponent<AudioSource>().pitch >= 1.2f)
+            GetComponent<AudioSource>().pitch =1.2f;
+
+
         foreach (AudioSource ac in slotReels)
         {
 

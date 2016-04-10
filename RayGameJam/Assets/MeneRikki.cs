@@ -22,7 +22,6 @@ public class MeneRikki : MonoBehaviour
     public void BrokeMe()
     {
 
-        print(eiRikkiOleva);
         eiRikkiOleva.SetActive (false);
         Destroy(eiRikkiOleva);
 
