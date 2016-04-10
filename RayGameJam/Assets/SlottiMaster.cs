@@ -31,6 +31,7 @@ public class SlottiMaster : MonoBehaviour
 
     public static SlottiMaster Instance;
 
+    bool Touched;
 
     public Transform[] SlotSpawnPoints;
 
@@ -54,26 +55,47 @@ public class SlottiMaster : MonoBehaviour
         ActiveSlot = SLOTS[0];
       //  SLOTS[1].ReStartReel();
         oikeaLottoRivi = new en_Fruits[SLOTS.Length];
-        
+
+
+        Invoke("SetAutoSpin",10);
     }
 
+    bool autoSpin;
+
+    void SetAutoSpin()
+    {
+        if (Touched == false)
+        {
+            InvokeRepeating("Spindin", 2, 4f);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
-
-            if (!endOfSpin)
-            {
-                StopActiveReel();
-            }
-            else
-            {
-                RestartSlots();
-            }
+           
+            if (autoSpin)
+            CancelInvoke("Spindin");
+            Touched = true;
+            Spindin();
         }
     }
 
+
+    void Spindin()
+    {
+
+        autoSpin = true;
+        if (!endOfSpin)
+        {
+            StopActiveReel();
+        }
+        else
+        {
+            RestartSlots();
+        }
+    }
     public void StopActiveReel()
     {
             ActiveSlot.StopReel();
@@ -95,9 +117,9 @@ public class SlottiMaster : MonoBehaviour
     {
         endOfSpin = false;
         count = 0;
+        Touched = false;
 
         intesitymultiplier = 4;
-        print("RestartSlots");
         foreach (RotateObject r in SLOTS)
         {
             r.ReStartReel();
@@ -173,7 +195,7 @@ public class SlottiMaster : MonoBehaviour
         int SecondSlot = (int)oikeaLottoRivi[1];
         int ThirdSlot = (int)oikeaLottoRivi[2];
 
-        int standartAmount =3;
+        int standartAmount =1;
         int kaksX_amount =5;
         int jackPotAmount =15;
 

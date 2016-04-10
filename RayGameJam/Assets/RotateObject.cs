@@ -104,7 +104,6 @@ public class RotateObject : MonoBehaviour
 
     public void ReStartReel()
     {
-        print("Restart");
         isSpinning = true;
         MusicBox.instance.slotReels[MySlotID].enabled = true;
 
