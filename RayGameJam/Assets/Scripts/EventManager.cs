@@ -38,8 +38,8 @@ public class EventManager : MonoBehaviour
         if (adderTimer <= 0)
         {
             adderTimer = adderTime + adderTimer;
-        //    int multiplyer = Random.Range(1, 3);
-        //    AddEvent(Random.Range(0, 9), Random.Range(1, 10) * multiplyer);
+            int multiplyer = Random.Range(1, 3);
+            AddEvent(Random.Range(0, 9), Random.Range(1, 10) * multiplyer);
         }
 
 

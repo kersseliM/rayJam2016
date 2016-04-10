@@ -17,7 +17,16 @@ public enum additionalPool
     effXploSpiky,
     effBump,
     effDash,
-    kickFleims
+    kickFleims,
+    effCanFire,
+    effSparks,
+    effPDeth,
+    effPDethRay,
+    effPDethGlow,
+    audioP1D,
+    audioP2D,
+    audioP3D,
+    audioP4D
 }
 
 public enum en_TypeOfObject

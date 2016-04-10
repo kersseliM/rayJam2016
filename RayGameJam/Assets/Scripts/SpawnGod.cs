@@ -32,7 +32,9 @@ public class SpawnGod : MonoBehaviour
                 newFruit.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);
                 break;
         }
-        EffetcHandly spawnEff2 = (EffetcHandly)AdditionalPool.instance.GetObject((int)additionalPool.effSmoke).MainScript;
+        EffetcHandly spawnEff = (EffetcHandly)AdditionalPool.instance.GetObject((int)additionalPool.effCanFire).MainScript;
+        spawnEff.Set(spawnPoint[curPoint].position);
+        EffetcHandly spawnEff2 = (EffetcHandly)AdditionalPool.instance.GetObject((int)additionalPool.effSparks).MainScript;
         spawnEff2.Set(spawnPoint[curPoint].position);
         AudioCreatureHandly spawnAudio = (AudioCreatureHandly)AdditionalPool.instance.GetObject((int)additionalPool.audioCannon).MainScript;
         spawnAudio.Set(spawnPoint[curPoint].position);
