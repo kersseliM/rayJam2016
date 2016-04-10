@@ -27,6 +27,14 @@ public class SpawnGod : MonoBehaviour
                 FallingXploFruit fallXploFruit = (FallingXploFruit)MainPool.instance.GetObject((int)id).MainScript;
                 fallXploFruit.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);
                 break;
+            case en_Fruits.Banaani:
+                SpinKickFruit spinKickFruit = (SpinKickFruit)MainPool.instance.GetObject((int)id).MainScript;
+                spinKickFruit.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);
+                break;
+            case en_Fruits.Kirsikka:
+                LowSpinnerFruit spinLowFruit = (LowSpinnerFruit)MainPool.instance.GetObject((int)id).MainScript;
+                spinLowFruit.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);
+                break;
             default:
                 BasicFruit newFruit = (BasicFruit)MainPool.instance.GetObject((int)id).MainScript;
                 newFruit.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);

@@ -5,8 +5,14 @@ public class PlayerGuy : MonoBehaviour
 {
     public int myId;
     public float kickForce;
+    public RotateAround myRotate;
+    public GameObject mySSJ;
     private Rigidbody myRB;
     private float hitTimer;
+    private float rotateSpeedMultiply = 1;
+    private float rotateDuration = 0;
+    private bool isSSJ = false;
+    private float SSJTimer = 0;
 
     void Start()
     {
@@ -16,6 +22,22 @@ public class PlayerGuy : MonoBehaviour
     void Update()
     {
         hitTimer -= Time.deltaTime;
+        if (rotateSpeedMultiply != 1)
+        {
+            rotateDuration -= Time.deltaTime;
+            if (rotateDuration <= 0)
+            {
+                SetRotateSpeed(1, 0);
+            }
+        }
+        if(isSSJ)
+        {
+            SSJTimer -= Time.deltaTime;
+            if(SSJTimer <= 0)
+            {
+                SetSSJ(false, 0);
+            }
+        }
     }
     public void Kill()
     {
@@ -26,7 +48,7 @@ public class PlayerGuy : MonoBehaviour
         spawnEff2.Set(transform.position);
         EffetcHandly spawnEff3 = (EffetcHandly)AdditionalPool.instance.GetObject((int)additionalPool.effPDethRay).MainScript;
         spawnEff3.Set(transform.position);
-        switch(myId)
+        switch (myId)
         {
             case 0:
                 AudioCreatureHandly spawnAudio1 = (AudioCreatureHandly)AdditionalPool.instance.GetObject((int)additionalPool.audioP1D).MainScript;
@@ -68,5 +90,26 @@ public class PlayerGuy : MonoBehaviour
     public Rigidbody GetRB()
     {
         return myRB;
+    }
+    public void SetRotateSpeed(float value, float duration)
+    {
+        rotateSpeedMultiply = value;
+        myRotate.SetMultiply(rotateSpeedMultiply);
+        rotateDuration += duration;
+    }
+    public void SetSSJ(bool state, float duration)
+    {
+        mySSJ.SetActive(state);
+        isSSJ = state;
+        if (state)
+        {
+            SSJTimer += duration;
+            kickForce *= 10;
+        }
+        else
+        {
+            SSJTimer = 0;
+            kickForce /= 10;
+        }
     }
 }

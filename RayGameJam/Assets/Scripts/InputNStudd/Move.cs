@@ -21,22 +21,22 @@ public class Move : MonoBehaviour
         {
             if (Input.GetButtonUp("P1F"))
             {
-                TapUp(0, 1);
+                TapUp(1, 1);
             }
             if (Input.GetButtonUp("P1B"))
             {
-                TapUp(0, -1);
+                TapUp(1, -1);
             }
         }
         if (!GameManager.instance.GetPlayerDead(0))
         {
             if (Input.GetButtonUp("P2F"))
             {
-                TapUp(1, 1);
+                TapUp(0, 1);
             }
             if (Input.GetButtonUp("P2B"))
             {
-                TapUp(1, -1);
+                TapUp(0, -1);
             }
         }
         if (!GameManager.instance.GetPlayerDead(2))

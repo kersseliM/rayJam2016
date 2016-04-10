@@ -38,8 +38,8 @@ public class EventManager : MonoBehaviour
         if (adderTimer <= 0)
         {
             adderTimer = adderTime + adderTimer;
-          //  int multiplyer = Random.Range(1, 3);
-         //   AddEvent(Random.Range(0, 9), Random.Range(1, 10) * multiplyer);
+            //  int multiplyer = Random.Range(1, 3);
+            //   AddEvent(Random.Range(0, 9), Random.Range(1, 10) * multiplyer);
         }
 
 
@@ -59,14 +59,26 @@ public class EventManager : MonoBehaviour
 
     public void AddEvent(int id, int amount)
     {
-        for (int i = 0; i < amount; i++)
+        if ((en_Fruits)id != en_Fruits.RayLogo)
         {
-            eventQueue.Enqueue((en_Fruits)id);
+            for (int i = 0; i < amount; i++)
+            {
+                eventQueue.Enqueue((en_Fruits)id);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < (amount * 3) + 2; i++)
+            {
+                int thisId = Random.Range(0, 8);
+                if (thisId == 7) { thisId = 8; } //koska ray ennen melonia
+                eventQueue.Enqueue((en_Fruits)thisId);
+            }
         }
     }
 
     private void ActivateEvent(en_Fruits id)
     {
-                spawnGod.Spawn(id);
+        spawnGod.Spawn(id);
     }
 }

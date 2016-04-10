@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     }
     private void DeadEvent(int id)
     {
-        AudioCreatureHandly spawnAudio = (AudioCreatureHandly)AdditionalPool.instance.GetObject(Random.Range((int)additionalPool.audioVictory1, (int)additionalPool.audioVictory2 + 1)).MainScript;
+        AudioCreatureHandly spawnAudio = (AudioCreatureHandly)AdditionalPool.instance.GetObject((int)additionalPool.audioVictory1).MainScript;
         spawnAudio.Set(transform.position);
         GGPanel.SetActive(true);
         GGText.text = "Player  " + (id + 1) + "  Rekted  'ém  All!";
