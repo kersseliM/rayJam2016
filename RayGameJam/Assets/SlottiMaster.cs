@@ -58,13 +58,17 @@ public class SlottiMaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(stop))
+        if (Input.GetMouseButtonDown(0))
         {
-            StopActiveReel();
-        }
-        if (Input.GetKeyDown(start))
-        {
-            RestartSlots();
+
+            if (!endOfSpin)
+            {
+                StopActiveReel();
+            }
+            else
+            {
+                RestartSlots();
+            }
         }
     }
 
