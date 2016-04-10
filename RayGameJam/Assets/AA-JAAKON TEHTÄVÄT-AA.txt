@@ -1,6 +1,27 @@
+1. Default napit oikein
+2. Pelaajien katoaminen kuollessa
+3. MARKO slotit kuntoon ja yhteydessä peliin
+
+KLO 11.30
+
+11. Pelaajan kuolemisefekti
+12. Spawnitykin "suuliekki"
+
+KLO 15.00
+
+21.
+22.
+
+KLO 17.00
+
+Sitten hubaaaa
+
+
+
+
 4. Game over canvas TEXTI mahtumaan uudelle paikalleen.
-todellaki 5. Ruudussa on välillä jotain outoa vivahdetta...
-":-D" 8. Efekti: Pelaaja törmää takaapäin
+todellaki
+8. Efekti: Pelaaja törmää takaapäin
 
 
 huom. Ota mun scene siihen sun scenen viereen. Se slotti testi scene.
