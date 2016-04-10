@@ -38,4 +38,8 @@ public class PlayerGuy : MonoBehaviour
             hitTimer = 0.25f;
         }
     }
+    public Rigidbody GetRB()
+    {
+        return myRB;
+    }
 }

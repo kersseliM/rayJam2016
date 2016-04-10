@@ -4,7 +4,6 @@ using System.Collections;
 public class FallingXploFruit : MonoBehaviour
 {
     public MeshRenderer myRend;
-    public Vector2 throwForce;
     public float lifeDistance = 1;
     public Vector3 maxPos;
     public Vector3 minPos;
@@ -55,8 +54,8 @@ public class FallingXploFruit : MonoBehaviour
     {
         if (colleisson.gameObject.tag == "Ground")
         {
-          //  FleimsHanfly fleims = (FleimsHanfly)AdditionalPool.instance.GetObject(0).MainScript;
-          //  fleims.Set(transform.position);
+            KickUpFleimHandly fleims = (KickUpFleimHandly)AdditionalPool.instance.GetObject((int)additionalPool.kickFleims).MainScript;
+            fleims.Set(transform.position);
             EffetcHandly spawnEff = (EffetcHandly)AdditionalPool.instance.GetObject((int)additionalPool.effXploNorm).MainScript;
             spawnEff.Set(transform.position);
             EffetcHandly spawnEff2 = (EffetcHandly)AdditionalPool.instance.GetObject((int)additionalPool.effSmoke).MainScript;

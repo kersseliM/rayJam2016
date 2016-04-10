@@ -12,7 +12,7 @@ public class EventManager : MonoBehaviour
     private float adderTimer = 0;
 
     private float eventDelayCounter = 0;
-    private Queue<int> eventQueue = new Queue<int>();
+    private Queue<en_Fruits> eventQueue = new Queue<en_Fruits>();
 
     void Awake()
     {
@@ -38,8 +38,8 @@ public class EventManager : MonoBehaviour
         if (adderTimer <= 0)
         {
             adderTimer = adderTime + adderTimer;
-          //  int multiplyer = Random.Range(1, 3);
-          //  AddEvent(Random.Range(0, 5), Random.Range(1, 10) * multiplyer);
+        //    int multiplyer = Random.Range(1, 3);
+        //    AddEvent(Random.Range(0, 9), Random.Range(1, 10) * multiplyer);
         }
 
 
@@ -61,32 +61,12 @@ public class EventManager : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
-            eventQueue.Enqueue(id);
+            eventQueue.Enqueue((en_Fruits)id);
         }
     }
 
-    private void ActivateEvent(int id)
+    private void ActivateEvent(en_Fruits id)
     {
-        switch (id)
-        {
-            case 0:
                 spawnGod.Spawn(id);
-                break;
-            case 1:
-                spawnGod.Spawn(id);
-                break;
-            case 2:
-                spawnGod.Spawn(id);
-                break;
-            case 3:
-                spawnGod.Spawn(id);
-                break;
-            case 4:
-                spawnGod.Spawn(id);
-                break;
-            default:
-                spawnGod.Spawn(id);
-                break;
-        }
     }
 }

@@ -6,26 +6,29 @@ public class SpawnGod : MonoBehaviour
     public Transform[] spawnPoint;
     private bool turn = false;
     private int prev = 0;
-    public void Spawn(int id)
+    public void Spawn(en_Fruits id)
     {
         int curPoint = NewPointId();
         switch (id)
         {
-            case 1:
-                XploFruit xploFruit = (XploFruit)MainPool.instance.GetObject(id).MainScript;
+            case en_Fruits.Appelsiini:
+                XploFruit xploFruit = (XploFruit)MainPool.instance.GetObject((int)id).MainScript;
                 xploFruit.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);
                 break;
-            case 6:
-                KillerFruit killerFruit = (KillerFruit)MainPool.instance.GetObject(id).MainScript;
+            case en_Fruits.Rypaleet:
+                KillerFruit killerFruit = (KillerFruit)MainPool.instance.GetObject((int)id).MainScript;
                 killerFruit.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);
                 break;
-            case 2:
-                KillerFruit killerFruit2 = (KillerFruit)MainPool.instance.GetObject(id).MainScript;
-                killerFruit2.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);
+            case en_Fruits.Paaryna:
+                GrowFruit growFruit = (GrowFruit)MainPool.instance.GetObject((int)id).MainScript;
+                growFruit.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);
+                break;
+            case en_Fruits.Luumukiisseli:
+                FallingXploFruit fallXploFruit = (FallingXploFruit)MainPool.instance.GetObject((int)id).MainScript;
+                fallXploFruit.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);
                 break;
             default:
-                print(id);
-                BasicFruit newFruit = (BasicFruit)MainPool.instance.GetObject(id).MainScript;
+                BasicFruit newFruit = (BasicFruit)MainPool.instance.GetObject((int)id).MainScript;
                 newFruit.Set(spawnPoint[curPoint].eulerAngles, spawnPoint[curPoint].position);
                 break;
         }

@@ -50,7 +50,7 @@ public class KickUpFleimHandly : MonoBehaviour
     {
         if (colleisson.gameObject.tag == "Player")
         {
-            colleisson.gameObject.GetComponent<Rigidbody>().AddForce(((transform.position - colleisson.gameObject.transform.position) * dirPower) + (transform.up * upPower), ForceMode.Impulse);
+            colleisson.gameObject.GetComponent<RefToGuy>().myGuy.GetRB().AddForce(((transform.position - colleisson.gameObject.transform.position) * dirPower) + (transform.up * upPower), ForceMode.Impulse);
             EffetcHandly spawnEff2 = (EffetcHandly)AdditionalPool.instance.GetObject((int)additionalPool.effSmoke).MainScript;
             spawnEff2.Set(colleisson.gameObject.transform.position);
             AudioCreatureHandly spawnAudio = (AudioCreatureHandly)AdditionalPool.instance.GetObject((int)additionalPool.audioPCol).MainScript;

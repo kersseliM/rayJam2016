@@ -16,7 +16,8 @@ public enum additionalPool
     effXploNorm,
     effXploSpiky,
     effBump,
-    effDash
+    effDash,
+    kickFleims
 }
 
 public enum en_TypeOfObject

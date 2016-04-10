@@ -50,7 +50,7 @@ public class GrowFruit : MonoBehaviour
     {
         if (colleisson.gameObject.tag == "Player")
         {
-            colleisson.gameObject.transform.localScale *= 1.1f;
+            colleisson.gameObject.transform.localScale *= 1.25f;
 
             EffetcHandly spawnEff = (EffetcHandly)AdditionalPool.instance.GetObject((int)additionalPool.effSmoke).MainScript;
             spawnEff.Set(transform.position);
