@@ -66,7 +66,7 @@ public class SlottiMaster : MonoBehaviour
     {
         if (Touched == false)
         {
-            InvokeRepeating("Spindin", 2, 4f);
+            InvokeRepeating("Spindin", 2, 1f);
         }
     }
     // Update is called once per frame
