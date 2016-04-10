@@ -7,6 +7,7 @@ public class PlayerGuy : MonoBehaviour
     public float kickForce;
     public RotateAround myRotate;
     public GameObject mySSJ;
+    public GameObject mySSJHair;
     private Rigidbody myRB;
     private float hitTimer;
     private float rotateSpeedMultiply = 1;
@@ -101,6 +102,7 @@ public class PlayerGuy : MonoBehaviour
     {
         mySSJ.SetActive(state);
         isSSJ = state;
+        mySSJHair.SetActive(state);
         if (state)
         {
             SSJTimer += duration;
