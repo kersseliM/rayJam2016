@@ -20,6 +20,9 @@ public class PlayerGuy : MonoBehaviour
     public void Kill()
     {
         GameManager.instance.SetPlayerDead(myId);
+        EffetcHandly spawnEff = (EffetcHandly)AdditionalPool.instance.GetObject((int)additionalPool.effSmoke).MainScript;
+        spawnEff.Set(transform.position);
+        Destroy(gameObject);
     }
     void OnCollisionEnter(Collision colleisson)
     {
