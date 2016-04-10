@@ -19,7 +19,7 @@ public class DefaultButtons : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            Quit();
+            Application.LoadLevel(0);
         }
     }
 
